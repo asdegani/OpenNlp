@@ -33,7 +33,7 @@
 // License along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-using System;
+using System.IO;
 
 namespace OpenNLP.Tools.PosTagger
 {
@@ -55,13 +55,22 @@ namespace OpenNLP.Tools.PosTagger
 
 		public EnglishMaximumEntropyPosTagger(string modelFile) : 
             base(GetModel(modelFile), new DefaultPosContextGenerator()){ }
-		
-        
-        // Utilities ---------
+
+		public EnglishMaximumEntropyPosTagger(Stream modelStream, Stream dictionaryStream) :
+			base(GetModel(modelStream), new PosLookupList(dictionaryStream))
+		{ }
+
+
+		// Utilities ---------
 
 		private static SharpEntropy.IMaximumEntropyModel GetModel(string name)
 		{
 			return new SharpEntropy.GisModel(new SharpEntropy.IO.BinaryGisModelReader(name));
+		}
+
+		private static SharpEntropy.IMaximumEntropyModel GetModel(Stream modelStream)
+		{
+			return new SharpEntropy.GisModel(new SharpEntropy.IO.BinaryGisModelReader(modelStream));
 		}
 	}
 

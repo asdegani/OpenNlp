@@ -62,7 +62,17 @@ namespace OpenNLP.Tools.PosTagger
 		public PosLookupList(string file, bool caseSensitive) : this(new System.IO.StreamReader(file, System.Text.Encoding.UTF7), caseSensitive)
 		{
 		}
-		
+
+		/// <summary>
+		/// Create tag dictionary object with contents of specified stram.
+		/// </summary>
+		/// <param name="stream">
+		/// The stream for the tag dictionary.
+		/// </param>
+		public PosLookupList(System.IO.Stream stream) : this(new System.IO.StreamReader(stream, System.Text.Encoding.UTF7), true)
+		{
+		}
+
 		/// <summary>
 		/// Create tag dictionary object with contents of specified file and using specified case to determine how to access entries in the tag dictionary.
 		/// </summary>
