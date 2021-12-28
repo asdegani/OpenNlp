@@ -53,6 +53,10 @@ using System.Runtime.CompilerServices;
 //   (*) Delay Signing is an advanced option - see the Microsoft .NET Framework
 //       documentation for more information on this.
 //
-[assembly: AssemblyDelaySign(false)]
-[assembly: AssemblyKeyFile("")]
-[assembly: AssemblyKeyName("")]
+
+[assembly: AssemblyKeyFile("35MSSharedLib1024.snk")]
+[assembly: AssemblyDelaySign(true)]
+
+//[assembly: AssemblyDelaySign(false)]
+//[assembly: AssemblyKeyFile("")]
+//[assembly: AssemblyKeyName("")]

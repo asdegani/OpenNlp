@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>OpenNLP</id>
+    <id>OpenNLP.Signed</id>
     <version>1.3.5.1</version>
     <authors>AlexPoint</authors>
     <owners>AlexPoint</owners>
-    <projectUrl>https://github.com/AlexPoint/OpenNlp</projectUrl>
+    <projectUrl>https://github.com/asdegani/OpenNlp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>C# port of the Java OpenNLP tools retrieved from http://sharpnlp.codeplex.com/ (it's not mine!)</description>
     <releaseNotes>Add FileStream method</releaseNotes>
