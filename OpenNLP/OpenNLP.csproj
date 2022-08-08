@@ -1,31 +1,38 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
 	</PropertyGroup>
 	<ItemGroup>
-	  <Compile Remove="Tools\Parser\Common\**" />
-	  <Compile Remove="Tools\Parser\LexParser\**" />
-	  <EmbeddedResource Remove="Tools\Parser\Common\**" />
-	  <EmbeddedResource Remove="Tools\Parser\LexParser\**" />
-	  <None Remove="Tools\Parser\Common\**" />
-	  <None Remove="Tools\Parser\LexParser\**" />
-	  <Compile Remove="Tools\Coreference\Mention\JWNLDictionary.cs" />
-	  <Compile Remove="Tools\Ling\AnnotationLookup.cs" />
-	  <Compile Remove="Tools\Util\Process\PTBTokenizer.cs" />
-	  <Compile Remove="Tools\Util\Process\WhitespaceLexer.cs" />
-	  <Compile Remove="Tools\Util\Process\WhitespaceTokenizer.cs" />
+		<Compile Remove="Tools\Parser\Common\**" />
+		<Compile Remove="Tools\Parser\LexParser\**" />
+		<EmbeddedResource Remove="Tools\Parser\Common\**" />
+		<EmbeddedResource Remove="Tools\Parser\LexParser\**" />
+		<None Remove="Tools\Parser\Common\**" />
+		<None Remove="Tools\Parser\LexParser\**" />
+		<Compile Remove="Tools\Coreference\Mention\JWNLDictionary.cs" />
+		<Compile Remove="Tools\Ling\AnnotationLookup.cs" />
+		<Compile Remove="Tools\Util\Process\PTBTokenizer.cs" />
+		<Compile Remove="Tools\Util\Process\WhitespaceLexer.cs" />
+		<Compile Remove="Tools\Util\Process\WhitespaceTokenizer.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\SharpEntropy\SharpEntropy.csproj" />
-		<ProjectReference Include="..\SharpWordNet\SharpWordNet.csproj" />
+		<ProjectReference Include="..\SharpEntropy\SharpEntropy.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\SharpEntropy\SharpEntropySqlite\SharpEntropySqlite.csproj" PrivateAssets="All"  />
+		<ProjectReference Include="..\SharpWordNet\SharpWordNet.csproj" PrivateAssets="All" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="app.config" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="System.CodeDom" Version="6.0.0" />
-	  <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-	  <PackageReference Include="System.Runtime" Version="4.3.1" />
-	  <PackageReference Include="System.Runtime.Caching" Version="6.0.0" />
+		<PackageReference Include="System.CodeDom" Version="6.0.0" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+		<PackageReference Include="System.Runtime" Version="4.3.1" />
+		<PackageReference Include="System.Runtime.Caching" Version="6.0.0" />
 	</ItemGroup>
+	<Target Name="CustomContentTarget">
+		<ItemGroup>
+			<TfmSpecificPackageFile Include="bin\Release\netstandard2.0\*.dll" />
+		</ItemGroup>
+	</Target>
 </Project>
