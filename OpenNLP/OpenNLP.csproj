@@ -5,6 +5,9 @@
 		<IncludeBuildOutput>True</IncludeBuildOutput>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>C:\Users\avdigmi.MIDDLEEAST\Downloads\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+		<DelaySign>True</DelaySign>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Remove="Tools\Parser\Common\**" />
@@ -20,8 +23,8 @@
 		<Compile Remove="Tools\Util\Process\WhitespaceTokenizer.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\SharpEntropy\SharpEntropy.csproj"  PrivateAssets="All"  />
-		<ProjectReference Include="..\SharpEntropy\SharpEntropySqlite\SharpEntropySqlite.csproj" PrivateAssets="All"  />
+		<ProjectReference Include="..\SharpEntropy\SharpEntropy.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\SharpEntropy\SharpEntropySqlite\SharpEntropySqlite.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\SharpWordNet\SharpWordNet.csproj" PrivateAssets="All" />
 	</ItemGroup>
 	<ItemGroup>
