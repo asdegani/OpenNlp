@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
+		<!--TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomPackageContent</TargetsForTfmSpecificContentInPackage-->
+		<IncludeBuildOutput>True</IncludeBuildOutput>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Remove="Tools\Parser\Common\**" />
@@ -30,9 +31,11 @@
 		<PackageReference Include="System.Runtime" Version="4.3.1" />
 		<PackageReference Include="System.Runtime.Caching" Version="6.0.0" />
 	</ItemGroup>
-	<Target Name="CustomContentTarget">
+	<!--Target Name="CustomPackageContent">
 		<ItemGroup>
-			<TfmSpecificPackageFile Include="bin\Release\netstandard2.0\*.dll" />
+			<TfmSpecificPackageFile Include="bin\Release\netstandard2.0\*.dll" >
+				<PackagePath>cs</PackagePath>
+			</TfmSpecificPackageFile>
 		</ItemGroup>
-	</Target>
+	</Target-->
 </Project>
