@@ -47,7 +47,9 @@
 	</ItemGroup>
 	<Target Name="GetMyPackageFiles">
 		<ItemGroup>
-			<BuildOutputInPackage Include="bin\Debug\netstandard2.0\*.dll" />
+			<BuildOutputInPackage Include="bin\Debug\netstandard2.0\OpenNLP*.dll" />
+			<BuildOutputInPackage Include="bin\Debug\netstandard2.0\SharpEntropy*.dll" />
+			<BuildOutputInPackage Include="bin\Debug\netstandard2.0\SharpWordNet*.dll" />
 		</ItemGroup>
 	</Target>
 </Project>
