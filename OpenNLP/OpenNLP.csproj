@@ -1,8 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<!--TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomPackageContent</TargetsForTfmSpecificContentInPackage-->
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
 		<IncludeBuildOutput>True</IncludeBuildOutput>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Remove="Tools\Parser\Common\**" />
@@ -18,7 +20,7 @@
 		<Compile Remove="Tools\Util\Process\WhitespaceTokenizer.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\SharpEntropy\SharpEntropy.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\SharpEntropy\SharpEntropy.csproj"  PrivateAssets="All"  />
 		<ProjectReference Include="..\SharpEntropy\SharpEntropySqlite\SharpEntropySqlite.csproj" PrivateAssets="All"  />
 		<ProjectReference Include="..\SharpWordNet\SharpWordNet.csproj" PrivateAssets="All" />
 	</ItemGroup>
@@ -31,11 +33,9 @@
 		<PackageReference Include="System.Runtime" Version="4.3.1" />
 		<PackageReference Include="System.Runtime.Caching" Version="6.0.0" />
 	</ItemGroup>
-	<!--Target Name="CustomPackageContent">
+	<Target Name="GetMyPackageFiles">
 		<ItemGroup>
-			<TfmSpecificPackageFile Include="bin\Release\netstandard2.0\*.dll" >
-				<PackagePath>cs</PackagePath>
-			</TfmSpecificPackageFile>
+			<BuildOutputInPackage Include="bin\Debug\netstandard2.0\*.dll" />
 		</ItemGroup>
-	</Target-->
+	</Target>
 </Project>
