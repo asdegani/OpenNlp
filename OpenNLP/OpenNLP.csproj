@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<AssemblyName>OpenNLP.Standard.Signed</AssemblyName>
+		<AssemblyVersion>2.0.0</AssemblyVersion>
+		<PackageId>$(AssemblyName)</PackageId>
+		<PackageVersion>$(AssemblyVersion)</PackageVersion>
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
 		<IncludeBuildOutput>True</IncludeBuildOutput>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>

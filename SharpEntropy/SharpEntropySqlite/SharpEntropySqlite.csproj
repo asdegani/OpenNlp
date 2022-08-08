@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<AssemblyName>SharpEntropySqlite.Standard.Signed</AssemblyName>
+		<AssemblyVersion>2.0.0</AssemblyVersion>
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>C:\Users\avdigmi.MIDDLEEAST\Downloads\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>True</DelaySign>
